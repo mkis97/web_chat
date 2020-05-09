@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+</head>
+
+<body>
+<div class="container h-100 chatCard">
+    <div id="free-chat" class="card h-100 border-primary">
+        <div class="card-header container">
+            <div class="row justify-content-md-between">
+                <div class="col col-lg-2">
+                    <input id="nick" type="text" placeholder="Nickname" onkeyup="success()"/>
+                </div>
+                <div class="col-md-auto">
+                    <span class="h3">Chat</span>
+                </div>
+                <div class="col col-lg-2">
+                    <span id="noOfUsers"></span> users online
+                </div>
+            </div>
+        </div>
+        <div id="chat-window" class="card-body overflow-auto">
+            <div id="output"></div>
+            <div id="feedback"></div>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <input id="message" type="text" placeholder="Message" style="width: 90%">
+            <button id="send" class="btn btn-primary" disabled>Send</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="chat.js"></script>
+<script src="../index.js"></script>
+</html>
+
+<style>
+    body {
+        height: 100vh;
+        width: 100%;
+        background: url(image.png);
+        background-position: 0px 0px, 0px 0px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .chatCard {
+        padding-top: 36px;
+        padding-bottom: 36px;
+    }
+</style>
